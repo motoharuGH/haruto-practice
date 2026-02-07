@@ -1,0 +1,22 @@
+import pyautogui
+import time
+import keyboard
+
+# ===== 設定 =====
+X = 1360   # クリックしたいX座標
+Y = 289   # クリックしたいY座標
+INTERVAL = 0.1  # クリック間隔（秒）
+# =================
+
+pyautogui.FAILSAFE = True
+pyautogui.PAUSE = 0
+
+print("クリック開始（Shift + Q で終了）")
+time.sleep(2)  # 猶予時間
+
+while True:
+    if keyboard.is_pressed('shift+q'):
+        print("終了しました")
+        break
+    pyautogui.click(X, Y)
+    time.sleep(INTERVAL)
